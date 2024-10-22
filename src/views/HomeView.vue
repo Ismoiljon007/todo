@@ -2,7 +2,8 @@
 import { ref, onMounted, onBeforeUnmount, watchEffect } from "vue";
 import { WebSocketService } from "../services/websocketService";
 
-const socketUrl: string = "wss://a84a-84-54-120-199.ngrok-free.app/ws/schedule/";
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNDc4NzM4LCJpYXQiOjE3Mjk2MTQ3MzgsImp0aSI6ImVlNWZhODRjMDkyOTQwYTA5ZDAzNjg4ZTYyYjQ1ZmQ2IiwidXNlcl9pZCI6MX0.Q8bG8_GGCbhP-5uWZ62bQbMmRaiRwDj3aao-xmFgA4c"
+const socketUrl: string = `wss://a84a-84-54-120-199.ngrok-free.app/ws/schedule/?token=${token}`;
 let wsService: WebSocketService;
 
 const users = ref([]);  // Store user data received from WebSocket
